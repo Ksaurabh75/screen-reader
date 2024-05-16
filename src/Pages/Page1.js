@@ -10,9 +10,9 @@ import giaIcon from './GiaIcon.png';
 import PDFViewer from './PdfViewer';
 
 export const guidedTexts = {
-    'first-name':"We need to know the professional's legal first name so we can add it to their employment contract.",
-    'last-name':"We need to know the professional's legal last name so we can add it to their employment contract.",
-    'email-address':'',
+    'first-name':"Kindly enter first name to add it to their employment contract.",
+    'last-name':"Kindly enter last name to add it to their employment contract.",
+    'email-address':'Kindly enter email to add it to their employment contract.',
     'mobile-number':"Please enter the personal mobile number for the professional.The professional will be able to change this once they are invited to the system."
 
 }
