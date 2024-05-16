@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "@globalization-partners/gia-widget": {
+      "signature": "3d21f4ac623d7619a2bf3fe4a3721dfe",
+      "file": true
+    }
+  }
+}
