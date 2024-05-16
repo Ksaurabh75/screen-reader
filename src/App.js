@@ -20,6 +20,8 @@ const MainContainer = styled.div`
 function App() {
   // const [announcement, setAnnouncement] = React.useState('Initial announcement')
   const [showAskGIA, setShowAskGia] = React.useState(true);
+  const [query, setQuery] = React.useState('');
+  const [selectedText, setSelectedText] = React.useState('');
   const selectionObserver = React.useMemo(()=>{
     const showAskGIAButton = (range) => {
       setShowAskGia(!!range);
@@ -29,6 +31,7 @@ function App() {
         askGiaBtn.style.top = `${rect.top}px`;
         askGiaBtn.style.left = `${rect.right}px`;
         askGiaBtn.style.display = 'block';
+        setQuery(range.toString());
       } else {
         askGiaBtn.style.display = 'none';
       }
@@ -51,8 +54,10 @@ function App() {
   }, []) 
   return (
     <MainContainer>
-      <Page1 />
-      {<StyledButton className='askGia' id="ask-gia-btn"> Ask Gia</StyledButton>}
+      <Page1 selectedText={selectedText} />
+      {<StyledButton className='askGia' id="ask-gia-btn" onClick={()=>{
+        setSelectedText(query);
+      }} > Ask Gia</StyledButton>}
     </MainContainer>
   );
 }
