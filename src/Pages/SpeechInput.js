@@ -53,7 +53,7 @@ const SpeechInput = ({label, id, onFocus}) => {
   
   const handleInputFocus = () => {
     onFocus(id);
-    const utterance = new SpeechSynthesisUtterance(`Please enter ${label}. ${guidedTexts[id]}`);
+    const utterance = new SpeechSynthesisUtterance(`${guidedTexts[id]}`);
     utterance.rate = 0.7; // Adjust speech rate (0.1 - 10)
     synth.speak(utterance);
     utterance.onend = () => {
