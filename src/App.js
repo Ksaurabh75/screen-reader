@@ -1,8 +1,5 @@
 import React from 'react';
 import './App.css';
-import Announcer from 'react-a11y-announcer';
-import SpeechToTextAndTextToSpeech from './SpeechSynthesis';
-import TextToSpeech from './SpeechSynthesis2';
 import Page1, { StyledButton } from './Pages/Page1';
 import { SelectionObserver } from './SelectionObserver';
 import styled from 'styled-components';
