@@ -218,6 +218,8 @@ const StyledImage2 = styled.img`
 const Page4 = (props) => {
   return (<div data-pdfviewer-id="viewer1">
     <PDFViewer
+      onTempQueryChange={props.onTempQueryChange}
+      onTempQueryResponseChange = {props.onTempQueryResponseChange}
       setEmbedStatus={(value) => {
         console.log(value);
       }}
@@ -941,6 +943,8 @@ const BasicBlog =(props) => {
 const Page1 = (props) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [focusGuideId, setFocusGuideId] = useState('');
+    const [tempQuery, setTempQuery] = useState(null);
+    const [tempQueryResponse, setTempQueryResponse] = useState(null);
     const getImageForPage1 = () =>{
         if((currentPage === 1)){
             return <StyledImage src={edit}></StyledImage>
@@ -965,7 +969,7 @@ const Page1 = (props) => {
         } else if(currentPage === 3){
             return <BasicBlog/>
         } else if(currentPage === 4){
-            return <Page4/>
+            return <Page4 onTempQueryChange = {setTempQuery} onTempQueryResponseChange = {setTempQueryResponse}/>
         
         }
     }
@@ -1024,6 +1028,8 @@ const Page1 = (props) => {
               showWidgetLauncher={true}
               useUnauthorisedURL={true}
               query={props.selectedText}
+              tempQuery={tempQuery}
+              tempQueryResponse={tempQueryResponse}
             />
           </div>
         </footer>
